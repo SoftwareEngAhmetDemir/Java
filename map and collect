@@ -1,0 +1,138 @@
+package denme;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+import java.util.function.Function;
+import java.util.stream.Collectors;
+
+
+
+class ViewValue {
+
+private int id;
+private String name;
+
+
+public ViewValue(String name) {
+	this.name = name;
+}
+
+public ViewValue() {
+	super();
+}
+public ViewValue(int id, String name) {
+	super();
+	this.id = id;
+	this.name = name;
+}
+public int getId() {
+	return id;
+}
+public void setId(int id) {
+	this.id = id;
+}
+public String getName() {
+	return name;
+}
+public void setName(String name) {
+	this.name = name;
+}
+
+
+
+}
+
+class B
+{
+	private int id;
+	private String name;
+
+
+	public B(String name) {
+		super();
+		
+		this.name = name;
+	}
+
+	
+	public B(int id, String name) {
+		super();
+		this.id = id;
+		this.name = name;
+	}
+	public B() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
+	}
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	
+}
+
+public class Main {
+
+	private static final Function ViewValue = null;
+
+	public static void main(String[] args) {
+	
+		B b = new B(100,"ahmid");
+		ViewValue v1 = new ViewValue();
+		v1.setId(1);
+		v1.setName("Ahmed");
+		
+		
+//
+//		ViewValue v2 = new ViewValue();
+//		v2.setId(2);
+//		v2.setName("Ahmed22");
+//		
+//		
+//		ViewValue v[] = {v1,v2};
+//		List<B>L =  Arrays.stream(v1.getName().split(","))
+//				.map(B::new)
+//				.collect(Collectors.toList());
+//				
+//		L =  Arrays.stream(v2.getName().split(","))
+//				.map(B::new)
+//				.collect(Collectors.toList());
+//	
+//		
+//		for(int i=0;i<L.size();i++)
+//		{
+//			System.out.println(L.get(i).getName());
+//		}
+//	
+
+		
+		String s[] = {"a, b", "c, d", "f, g"};
+		
+		
+		List<String[]> numbers = Arrays.stream(s)
+                .map(s1 -> s1.split(",")) // substitute with your deilimeter
+                .collect(Collectors.toList());
+		
+		
+	
+		for(int i=0;i<numbers.size();i++)
+		{
+			for(int j=0;j<numbers.get(i).length;j++)
+			{
+				System.out.print(numbers.get(i)[j]);
+			}
+			System.out.println();
+		}
+	}
+
+}
